@@ -9,9 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PDH.MessagingDemo.ServiceB"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PDH.MessagingDemo.Shared", "src\PDH.MessagingDemo.Shared\PDH.MessagingDemo.Shared.csproj", "{14D34FE5-EE74-4253-B0F1-39ED5490A86F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PDH.MessagingDemo.Web", "src\PDH.MessagingDemo.Web\PDH.MessagingTest.Web\PDH.MessagingDemo.Web.csproj", "{D35EE9D3-9701-45AB-9B8F-9ECE20B98D98}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PDH.MessagingDemo.Ui", "src\PDH.MessagingDemo.Ui\PDH.MessagingDemo.Ui\PDH.MessagingDemo.Ui.csproj", "{5346DDC0-1F81-4C98-9B63-2B4242299BDD}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PDH.MessagingDemo.Web.Client", "src\PDH.MessagingDemo.Web\PDH.MessagingTest.Web.Client\PDH.MessagingDemo.Web.Client.csproj", "{663E2A9E-E24C-4FC4-9CB1-C5F6FB108973}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PDH.MessagingDemo.Ui.Client", "src\PDH.MessagingDemo.Ui\PDH.MessagingDemo.Ui.Client\PDH.MessagingDemo.Ui.Client.csproj", "{1374A87D-18D4-4116-BD99-75B819CC02CA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,14 +31,14 @@ Global
 		{14D34FE5-EE74-4253-B0F1-39ED5490A86F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{14D34FE5-EE74-4253-B0F1-39ED5490A86F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{14D34FE5-EE74-4253-B0F1-39ED5490A86F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D35EE9D3-9701-45AB-9B8F-9ECE20B98D98}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D35EE9D3-9701-45AB-9B8F-9ECE20B98D98}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D35EE9D3-9701-45AB-9B8F-9ECE20B98D98}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D35EE9D3-9701-45AB-9B8F-9ECE20B98D98}.Release|Any CPU.Build.0 = Release|Any CPU
-		{663E2A9E-E24C-4FC4-9CB1-C5F6FB108973}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{663E2A9E-E24C-4FC4-9CB1-C5F6FB108973}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{663E2A9E-E24C-4FC4-9CB1-C5F6FB108973}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{663E2A9E-E24C-4FC4-9CB1-C5F6FB108973}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5346DDC0-1F81-4C98-9B63-2B4242299BDD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5346DDC0-1F81-4C98-9B63-2B4242299BDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5346DDC0-1F81-4C98-9B63-2B4242299BDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5346DDC0-1F81-4C98-9B63-2B4242299BDD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1374A87D-18D4-4116-BD99-75B819CC02CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1374A87D-18D4-4116-BD99-75B819CC02CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1374A87D-18D4-4116-BD99-75B819CC02CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1374A87D-18D4-4116-BD99-75B819CC02CA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

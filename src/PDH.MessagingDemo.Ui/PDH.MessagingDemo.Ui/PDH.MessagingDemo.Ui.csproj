@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>aspnet-PDH.MessagingDemo.Ui-d25569c0-7052-4381-962e-339d065f0421</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\PDH.MessagingDemo.Shared\PDH.MessagingDemo.Shared.csproj" />
+    <ProjectReference Include="..\PDH.MessagingDemo.Ui.Client\PDH.MessagingDemo.Ui.Client.csproj" />
+    <PackageReference Include="Lib.Core.Rebus" Version="1.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="8.0.3" />
+    <PackageReference Include="Auth0.AspNetCore.Authentication" Version="1.4.1" />
+  </ItemGroup>
+
+</Project>

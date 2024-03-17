@@ -1,4 +1,4 @@
-﻿namespace PDH.MessagingDemo.Web.Client;
+﻿namespace PDH.MessagingDemo.Ui;
 public class EventDispatcher<T>
 {
     public event EventHandler<T>? ReceivedMessage;
@@ -25,8 +25,4 @@ public class TestMessageReceivedEventArgs : EventArgs
     public string User { get; set; }
 
     public bool Mine { get; set; }
-
-    public bool IsNotice => Message.StartsWith("[Notice]");
-
-    public string Css => Mine ? "sent" : "received";
 }

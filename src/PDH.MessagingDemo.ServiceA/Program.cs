@@ -1,9 +1,16 @@
 using Lib.Core.Rebus;
-using PDH.MessagingDemo.ServiceA;
-using PDH.MessagingDemo.Shared;
+using Microsoft.EntityFrameworkCore;
+using PDH.MessagingDemo.ServiceA.Endpoints;
+using PDH.MessagingDemo.ServiceA.Persistence;
 using Rebus.Routing.TypeBased;
+using ChatMessage = PDH.MessagingDemo.Shared.ChatMessage;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddDbContext<ChatContext>(options =>
+{
+    options.UseSqlServer(builder.Configuration["Db:ConnectionString"]!);
+});
 
 builder.Services.AddOneWayMessaging(options =>
 {
@@ -23,6 +30,6 @@ var app = builder.Build();
 
 app.UseHttpsRedirection();
 
-app.MapPost("/message", SendMessage.Execute);
+app.MapEndpoints();
 
 app.Run();
