@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PDH.MessagingDemo.ServiceA", "src\PDH.MessagingDemo.ServiceA\PDH.MessagingDemo.ServiceA.csproj", "{BF237B66-1AF8-4B8B-A3C2-122A4C660B76}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PDH.MessagingDemo.ServiceB", "src\PDH.MessagingDemo.ServiceB\PDH.MessagingDemo.ServiceB.csproj", "{8144459D-042B-414C-A299-32A47E46DCAB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PDH.MessagingDemo.Shared", "src\PDH.MessagingDemo.Shared\PDH.MessagingDemo.Shared.csproj", "{14D34FE5-EE74-4253-B0F1-39ED5490A86F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PDH.MessagingDemo.Web", "src\PDH.MessagingDemo.Web\PDH.MessagingTest.Web\PDH.MessagingDemo.Web.csproj", "{D35EE9D3-9701-45AB-9B8F-9ECE20B98D98}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PDH.MessagingDemo.Web.Client", "src\PDH.MessagingDemo.Web\PDH.MessagingTest.Web.Client\PDH.MessagingDemo.Web.Client.csproj", "{663E2A9E-E24C-4FC4-9CB1-C5F6FB108973}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BF237B66-1AF8-4B8B-A3C2-122A4C660B76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF237B66-1AF8-4B8B-A3C2-122A4C660B76}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF237B66-1AF8-4B8B-A3C2-122A4C660B76}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF237B66-1AF8-4B8B-A3C2-122A4C660B76}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8144459D-042B-414C-A299-32A47E46DCAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8144459D-042B-414C-A299-32A47E46DCAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8144459D-042B-414C-A299-32A47E46DCAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8144459D-042B-414C-A299-32A47E46DCAB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14D34FE5-EE74-4253-B0F1-39ED5490A86F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14D34FE5-EE74-4253-B0F1-39ED5490A86F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14D34FE5-EE74-4253-B0F1-39ED5490A86F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14D34FE5-EE74-4253-B0F1-39ED5490A86F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D35EE9D3-9701-45AB-9B8F-9ECE20B98D98}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D35EE9D3-9701-45AB-9B8F-9ECE20B98D98}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D35EE9D3-9701-45AB-9B8F-9ECE20B98D98}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D35EE9D3-9701-45AB-9B8F-9ECE20B98D98}.Release|Any CPU.Build.0 = Release|Any CPU
+		{663E2A9E-E24C-4FC4-9CB1-C5F6FB108973}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{663E2A9E-E24C-4FC4-9CB1-C5F6FB108973}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{663E2A9E-E24C-4FC4-9CB1-C5F6FB108973}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{663E2A9E-E24C-4FC4-9CB1-C5F6FB108973}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EE771F9E-61BF-4780-A0F9-DF34FA998B27}
+	EndGlobalSection
+EndGlobal
