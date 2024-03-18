@@ -1,22 +1,13 @@
 ﻿using PDH.MessagingDemo.Shared;
+using PDH.MessagingDemo.Ui.Client;
 using Rebus.Handlers;
 
 namespace PDH.MessagingDemo.Ui;
 
-public class MessageHandler : IHandleMessages<ChatMessage>
+public class MessageHandler(MessageReciever messageReciever) : IHandleMessages<ChatMessage>
 {
-    private readonly EventDispatcher<TestMessageReceivedEventArgs> _dispatcher;
-    private readonly IServiceScopeFactory _scopeFactory;
-
-    public MessageHandler(EventDispatcher<TestMessageReceivedEventArgs> dispatcher, IServiceScopeFactory scopeFactory)
+    public async Task Handle(ChatMessage message)
     {
-        _dispatcher = dispatcher;
-        _scopeFactory = scopeFactory;
-    }
-
-    public Task Handle(ChatMessage message)
-    {
-        _dispatcher.MessageReceived(new TestMessageReceivedEventArgs(message.Message, message.User));
-        return Task.CompletedTask;
+        await messageReciever.SendMessage(message);
     }
 }

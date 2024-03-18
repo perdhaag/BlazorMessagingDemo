@@ -7,6 +7,7 @@ using Microsoft.Extensions.DependencyInjection.Extensions;
 using PDH.MessagingDemo.Shared;
 using PDH.MessagingDemo.Ui;
 using PDH.MessagingDemo.Ui.Auth;
+using PDH.MessagingDemo.Ui.Client;
 using PDH.MessagingDemo.Ui.Components;
 using Rebus.Routing.TypeBased;
 
@@ -20,6 +21,8 @@ builder.Services.AddAuth0WebAppAuthentication(options =>
     options.Domain = "pdh-services.eu.auth0.com";
     options.ClientId = "52pJJaBQpUbGycF8rS7UYnOjqQZaQUQn";
 });
+builder.Services.AddSingleton(typeof(EventDispatcher<>));
+
 
 builder.Services.TryAddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
@@ -43,13 +46,14 @@ builder.Services.AddMessaging(options =>
     options.Handlers = new List<Type> { typeof(MessageHandler) };
 });
 
-builder.Services.AddSingleton(typeof(EventDispatcher<>));
 
 builder.Services.AddHttpClient<ChatService>(options =>
 {
     options.BaseAddress = new Uri(builder.Configuration["ApiBase"]!);
 });
 
+builder.Services.AddScoped<MessageReciever>();
+builder.Services.AddSingleton<UserStore>();
 
 var app = builder.Build();
 
@@ -62,6 +66,7 @@ else
     app.UseExceptionHandler("/Error", createScopeForErrors: true);
     app.UseHsts();
 }
+
 
 app.UseHttpsRedirection();
 

@@ -11,7 +11,7 @@ public class CreateChatRoom
     public static async Task<IResult> Execute([FromBody] Request request, ChatContext db)
     {
         var users = await db.Users
-            .Where(x => request.Users.Contains(x.UserName))
+            .Where(x => request.Users.Contains(x.ProviderId))
             .ToListAsync();
 
         var room = db.ChatRooms.Add(new ChatRoom

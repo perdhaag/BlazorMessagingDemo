@@ -1,17 +1,17 @@
 ﻿namespace PDH.MessagingDemo.Shared;
 public class ChatMessage
 {
-    public ChatMessage(string message, string user, ChatRoomInfo chatRoomId)
+    public ChatMessage(string message, string user, ChatRoomInfo chatRoom)
     {
         Id = Guid.NewGuid();
         Message = message;
         User = user;
-        ChatRoomId = chatRoomId;
+        ChatRoom = chatRoom;
     }
 
     public Guid Id { get; set; }
 
-    public ChatRoomInfo ChatRoomId { get; set; }
+    public ChatRoomInfo ChatRoom { get; set; }
 
     public string Message { get; set; }
 

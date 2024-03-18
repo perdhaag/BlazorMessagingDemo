@@ -1,4 +1,4 @@
-﻿namespace PDH.MessagingDemo.Ui.Dtos;
+﻿namespace PDH.MessagingDemo.Ui.Client.Dtos;
 
 public class MessageDto
 {

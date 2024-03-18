@@ -12,7 +12,7 @@ namespace PDH.MessagingDemo.Ui.Client
     // This only provides a user name and email for display purposes. It does not actually include any tokens
     // that authenticate to the server when making subsequent requests. That works separately using a
     // cookie that will be included on HttpClient requests to the server.
-    internal class PersistentAuthenticationStateProvider : AuthenticationStateProvider
+    public class PersistentAuthenticationStateProvider : AuthenticationStateProvider
     {
         private static readonly Task<AuthenticationState> defaultUnauthenticatedTask =
             Task.FromResult(new AuthenticationState(new ClaimsPrincipal(new ClaimsIdentity())));
@@ -27,7 +27,7 @@ namespace PDH.MessagingDemo.Ui.Client
             }
 
             Claim[] claims = [
-                new Claim(ClaimTypes.NameIdentifier, userInfo.UserId),
+                new Claim("userId", userInfo.UserId),
                 new Claim(ClaimTypes.Name, userInfo.Email),
                 new Claim(ClaimTypes.Email, userInfo.Email) ];
 

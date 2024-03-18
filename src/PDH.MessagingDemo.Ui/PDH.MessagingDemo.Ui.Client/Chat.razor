@@ -1,13 +1,20 @@
-﻿@page "/"
+﻿@page "/chat"
+@page "/chat/{ChatRoomId}"
 @using Microsoft.AspNetCore.Authorization
+@using PDH.MessagingDemo.Shared
+@using PDH.MessagingDemo.Ui.Client.Dtos
+@using System.Security.Claims
 @rendermode @(new InteractiveServerRenderMode(prerender: false))
 @attribute [Authorize]
 
+@inject EventDispatcher<ChatMessage> Dispatcher
+@inject ChatService ChatService
+@inject UserStore User
 
 <h1>Blazor SignalR Chat Sample</h1>
 <hr />
 
-@* @if (ChatRoomId is null)
+@if (ChatRoomId is null)
 {
     <p>
         Start chat with:
@@ -24,7 +31,7 @@
 }
 else
 {
-    <p>Hello @_userName</p>
+    <p>Hello @User.Id</p>
     <div class="alert alert-secondary mt-4" role="alert">
         <span class="oi oi-person mr-2" aria-hidden="true"></span>
     </div>
@@ -125,22 +132,16 @@ else
 
     private List<MessageDto> MessagesList { get; set; } = new();
 
-    private string? _username;
-
     private string? _newMessage;
 
-    private string? _userName;
-
-
     private IEnumerable<string>? _users = new List<string>();
-
 
     protected override async Task OnInitializedAsync()
     {
         if (AuthenticationState is not null)
         {
             var state = await AuthenticationState;
-            _userName = state.User.Identity?.Name ?? string.Empty;
+            User.SetId(state.User.Claims.FirstOrDefault(x => x.Type == ClaimTypes.NameIdentifier)!.Value);
             Dispatcher.ReceivedMessage += MessageReceived;
             if (ChatRoomId is not null)
             {
@@ -149,32 +150,34 @@ else
                 {
                     User = x.User,
                     Message = x.Message,
-                    Mine = x.User == _userName
+                    Mine = x.User == User.Id
                 })!);
             }
             else
             {
-                _users = await ChatService.GetUsers();
+                var users = await ChatService.GetUsers();
+                _users = users?.Where(x => x != User.Id);
             }
         }
     }
 
-    private void MessageReceived(object? sender, TestMessageReceivedEventArgs message)
+    private void MessageReceived(object? sender, ChatMessage message)
     {
         InvokeAsync(async () =>
         {
-            MessagesList!.Add(new MessageDto{Message = message.Message, User = message.User, Mine = message.Mine});
+            MessagesList!.Add(new MessageDto{Message = message.Message, User = message.User, Mine = message.User == User.Id});
             await InvokeAsync(StateHasChanged);
         });
     }
 
     private async Task SendAsync()
     {
-        await ChatService.SendMessage(ChatRoomId!, _newMessage!, _userName!);
+        await ChatService.SendMessage(ChatRoomId!, _newMessage!, User.Id);
     }
 
     private async Task StartChat(string user)
     {
-        var id = await ChatService.CreateChatRoom(new List<string> { user, _userName! });
+        var id = await ChatService.CreateChatRoom(new List<string> { user, User.Id });
         ChatRoomId = id.ToString();
-    } *@
+    }
+}

@@ -8,7 +8,7 @@ namespace PDH.MessagingDemo.ServiceA.Endpoints
         public static async Task<IResult> Execute(ChatContext db)
         {
             var users = await db.Users.ToListAsync();
-            return Results.Ok(users.Select(x => x.UserName));
+            return Results.Ok(users.Select(x => x.ProviderId));
         }
     }
 }

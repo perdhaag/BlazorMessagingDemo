@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Components.Server;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Options;
+using PDH.MessagingDemo.Ui.Client;
 using System.Diagnostics;
 using System.Security.Claims;
 

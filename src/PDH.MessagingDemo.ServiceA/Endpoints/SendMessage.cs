@@ -32,7 +32,7 @@ public class SendMessage
         await bus.Publish(new Shared.ChatMessage(request.Message, request.User, new ChatRoomInfo
         {
             Id = chatRoom.Id,
-            Users = chatRoom.Users?.Select(x => x.Email)!
+            Users = chatRoom.Users?.Select(x => x.ProviderId)!
         }));
 
         return Results.Ok(Task.CompletedTask);
